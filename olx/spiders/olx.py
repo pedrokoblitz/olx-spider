@@ -41,11 +41,11 @@ class OlxSpider(scrapy.Spider):
             item['ad_text'] = response.xpath('//div[@class="OLXad-description"]//li[@class="item"]//strong[@class="description"]')
 
             details_keys = response.xpath('//div[@class="OLXad-details"]//li[@class="item"]//span[@class="term"]')
-            details_values =  = response.xpath('//div[@class="OLXad-details"]//li[@class="item"]//strong[@class="description"]')
+            details_values = response.xpath('//div[@class="OLXad-details"]//li[@class="item"]//strong[@class="description"]')
             details = zip(details_keys, details_values)
 
             location_keys = response.xpath('//div[@class="OLXad-location-map"]//li[@class="item"]//span[@class="term"]')
-            location_values =  = response.xpath('//div[@class="OLXad-location-map"]//li[@class="item"]//strong[@class="description"]')
+            location_values = response.xpath('//div[@class="OLXad-location-map"]//li[@class="item"]//strong[@class="description"]')
             location = zip(location_keys, location_values)
 
             info = {}
