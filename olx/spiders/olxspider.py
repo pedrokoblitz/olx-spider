@@ -33,7 +33,6 @@ class OlxSpider(scrapy.Spider):
 
         item = OlxRealEstate()
 
-        item['estate_id'] = int(estate_id)
         item['url'] = response.url
         item['price'] = response.xpath('//div[@class="OLXad-price"]//li[@class="item"]//strong[@class="description"]')
         item['ad_text'] = response.xpath('//div[@class="OLXad-description"]//li[@class="item"]//strong[@class="description"]')
