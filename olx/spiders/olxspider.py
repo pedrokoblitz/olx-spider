@@ -2,15 +2,13 @@ import scrapy
 from olx.items import OlxRealEstate
 
 class OlxSpider(scrapy.Spider):
-    name = 'example.com'
-    allowed_domains = ['example.com']
+    name = 'olxspider'
+    allowed_domains = ['rj.olx.com.br']
 
     def start_requests(self):
         """
         """
-        yield scrapy.Request('http://www.example.com/1.html', self.parse)
-        yield scrapy.Request('http://www.example.com/2.html', self.parse)
-        yield scrapy.Request('http://www.example.com/3.html', self.parse)
+        yield scrapy.Request('http://rj.olx.com.br/rio-de-janeiro-e-regiao/centro/imoveis/aluguel', self.parse)
 
     def parse(self, response):
         """
