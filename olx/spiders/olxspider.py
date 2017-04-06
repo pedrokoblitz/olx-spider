@@ -39,7 +39,7 @@ class OlxSpider(scrapy.Spider):
             item['url'] = response.url
             item['price'] = response.xpath('//div[@class="OLXad-price"]//li[@class="item"]//strong[@class="description"]')
             item['ad_text'] = response.xpath('//div[@class="OLXad-description"]//li[@class="item"]//strong[@class="description"]')
-
+"""
             details_keys = response.xpath('//div[@class="OLXad-details"]//li[@class="item"]//span[@class="term"]')
             details_values = response.xpath('//div[@class="OLXad-details"]//li[@class="item"]//strong[@class="description"]')
             details = zip(details_keys, details_values)
@@ -62,6 +62,7 @@ class OlxSpider(scrapy.Spider):
             info['zipcode'] = location[""]
             
             item['info'] = info
+"""
 
             yield item
 

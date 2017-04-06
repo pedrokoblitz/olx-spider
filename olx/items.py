@@ -12,4 +12,4 @@ class OlxRealEstate(scrapy.Item):
     url = scrapy.Field()
     price = scrapy.Field()
     ad_text = scrapy.Field()
-    info = scrapy.Field()
+#    info = scrapy.Field()
