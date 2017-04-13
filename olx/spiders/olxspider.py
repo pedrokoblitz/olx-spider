@@ -13,7 +13,10 @@ class OlxSpider(scrapy.Spider):
     def parse(self, response):
         """
         """
-        for url in response.xpath('//a/@href').extract():
+        for url in response.xpath('//div/[@class="module_pagination"]/a/@href').extract():
+            yield scrapy.Request(url, callback=self.parse)
+
+        for url in response.xpath('//ul/[@id="main-ad-list"]').extract():
             yield scrapy.Request(url, callback=self.parse_item)
 
     def item_url_is_valid(self, url):
